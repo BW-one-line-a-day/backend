@@ -22,6 +22,7 @@
     "nodemon": "^1.19.1"
   },
   "scripts": {
+    "start": "node server.js",
     "server": "nodemon index.js",
     "test": "cross-env DB_ENV=testing jest --watch"
   },
