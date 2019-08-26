@@ -103,8 +103,6 @@ _example:_
 
 ```
 {
-    "error": true,
-    "user": {},
-    "message": "Include required credentials and try again."
+  "message": "Email and password required"
 }
 ```
