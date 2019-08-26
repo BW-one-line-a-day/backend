@@ -18,16 +18,26 @@
     "sqlite3": "^4.1.0",
     "supertest": "^4.0.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  },
   "scripts": {
     "server": "nodemon index.js",
     "test": "cross-env DB_ENV=testing jest --watch"
+  },
+  "engines":{
+    "node": "10.16.0"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BW-one-line-a-day/backend.git"
   },
-  "keywords": [],
+  "keywords": [
+    "node",
+    "express",
+    "blog",
+    "api"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
