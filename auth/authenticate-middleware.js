@@ -10,7 +10,7 @@ module.exports = (req, res, next) => {
             if(err){
                 res.status(401).json({you: 'Unauthorized Connection'})
             } else {
-                req.user = {username: decodedToken.username}
+                req.user = {email: decodedToken.email}
                 next()
             }
         })

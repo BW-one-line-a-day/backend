@@ -14,19 +14,19 @@ router.post('/register', (req, res) => {
       res.status(201).json(saved)
   })
   .catch(error => {
-      res.status(500).json(Error)
+      res.status(405).json({message: 'Email and password required'})
   })
 });
 
 router.post('/login', (req, res) => {
-  let { username, password } = req.body
-  Users.findBy({ username })
+  let { email, password } = req.body
+  Users.findBy({ email })
   .first()
   .then(user => {
       if(user && bcrypt.compareSync(password, user.password)){
           const token = getJwt(user)
           res.status(200).json({
-              message: `Welcome ${user.username}!`,
+              message: `Welcome ${user.email}!`,
               token
           })
       } else {
@@ -41,7 +41,7 @@ router.post('/login', (req, res) => {
 function getJwt(user){
   const payload = {
       subject: user.id,
-      username: user.username,
+      email: user.email,
       jwtid: 1,
   }
   const options = {
