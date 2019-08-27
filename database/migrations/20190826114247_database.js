@@ -13,7 +13,7 @@ exports.up = function(knex, Promise) {
         dl.increments()
         dl.string('note').notNullable()
         dl.integer('user_id').unsigned().notNullable().references('id').inTable('users').onUpdate('CASCADE').onDelete('CASCADE')
-        dl.integer('date').unsigned().notNullable()
+        dl.string('date').notNullable()
     })
   }
 
