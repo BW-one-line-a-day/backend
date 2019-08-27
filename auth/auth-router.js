@@ -25,9 +25,11 @@ router.post('/login', (req, res) => {
   .then(user => {
       if(user && bcrypt.compareSync(password, user.password)){
           const token = getJwt(user)
+          const id = user.id
           res.status(200).json({
               message: `Welcome ${user.email}!`,
-              token
+              token,
+              id
           })
       } else {
           res.status(401).json({message: 'Invlaid Credentials'})
