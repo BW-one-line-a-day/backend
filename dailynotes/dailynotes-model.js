@@ -17,8 +17,8 @@ function findById(id) {
         .where({ id });
 }
 
-function add({ note, user_id }) {
-    return db('dailylines').insert({ note, user_id });
+function add({ note, user_id, date }) {
+    return db('dailylines').insert({ note, user_id, date });
 }
 
 function update({ note }, id) {
