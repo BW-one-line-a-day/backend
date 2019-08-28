@@ -44,6 +44,7 @@ Not deployed yet
 | users      | DELETE   | /api/users/:id                       | Deletes the user with the provided ID. Cannot be undone. Does not delete user's posts from DB. |
 | dailylines      | GET   | /api/dailyposts                   | Retruns all `daily posts` created by all users. Can be used to filter by `user_id` to match with the user's id.   |
 | dailylines      | GET   | /api/dailyposts/:id                   | returns a specific `daily post` by the id.   |
+| dailylines      | GET   | /api/dailyposts/user/:id/posts                 | Returns all posts by the user who's id was provided.    |
 | dailylines      | POST   | /api/dailyposts             | Creates a new `daily post`. Requires "user_id" to be set to the user's id and "note" which includes the post text for that day.   |
 | dailylines      | PUT   | /api/dailyposts/:id                   | Update the `daily post` with the provided id. Only requires "note" field.    |
 | dailylines      | DELETE   | /api/dailyposts/:id                   | Delete the `daily post` with the provided id. Cannot be undone.    |

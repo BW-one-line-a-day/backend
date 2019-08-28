@@ -29,6 +29,16 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+router.get('/user/:id/posts', async (req, res) => {
+  try {
+    const { id } = req.params
+    const notes = await DailyNotes.findByUserId(id);
+    res.json(notes);
+  } catch (err) {
+    res.status(500).json({ message: 'Failed to get notes' });
+  }
+})
+
 
 router.post('/', async (req, res) => {
   try {
