@@ -3,6 +3,7 @@ const db = require('../database/dbconfig')
 module.exports = {
     find,
     findById,
+    findByUserId,
     add,
     update,
     remove,
@@ -15,6 +16,11 @@ function find(){
 function findById(id) {
     return db('dailylines')
         .where({ id });
+}
+
+function findByUserId(user_id){
+    return db('dailylines')
+        .where({ user_id })
 }
 
 function add({ note, user_id, date }) {
