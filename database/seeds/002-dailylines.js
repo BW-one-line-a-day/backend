@@ -1,10 +1,12 @@
 
 exports.seed = function(knex) {
   return knex('dailylines').del()
-    .then(() => knex.batchInsert('dailylines', myFakeYears, 30));
+    .then(() => knex.batchInsert('dailylines', masterFakeYears, 30));
 };
 
 const faker = require('faker');
+
+
 
 const myFakeYears = fakeYears(2014,2019);
 
@@ -12,6 +14,47 @@ for (let line of myFakeYears) {
     line.user_id=1;
     line.note = faker.random.words(33);
 }
+
+const myFakeYears2 = fakeYears(2014,2019);
+
+for (let line of myFakeYears2) {
+    line.user_id=2;
+    line.note = faker.random.words(33);
+}
+const myFakeYears3 = fakeYears(2014,2019);
+
+for (let line of myFakeYears3) {
+    line.user_id=3;
+    line.note = faker.random.words(33);
+}
+const myFakeYears4 = fakeYears(2014,2019);
+
+for (let line of myFakeYears4) {
+    line.user_id=4;
+    line.note = faker.random.words(33);
+}
+const myFakeYears5 = fakeYears(2014,2019);
+
+for (let line of myFakeYears5) {
+    line.user_id=5;
+    line.note = faker.random.words(33);
+}
+const myFakeYears6 = fakeYears(2014,2019);
+
+for (let line of myFakeYears6) {
+    line.user_id=6;
+    line.note = faker.random.words(33);
+}
+const myFakeYears7 = fakeYears(2014,2019);
+
+for (let line of myFakeYears7) {
+    line.user_id=7;
+    line.note = faker.random.words(33);
+}
+
+
+const masterFakeYears = [...myFakeYears, ...myFakeYears2, ...myFakeYears3, ...myFakeYears4, ...myFakeYears5, ...myFakeYears6, ...myFakeYears7]
+
 
 function fakeYears(from,to) {
     const result = [];
