@@ -1,6 +1,6 @@
 const bcrypt = require('bcryptjs')
-const crypPass1 = bcrypt.hashSync('testpass', 20)
-const crypPass2 = bcrypt.hashSync('adminpass', 20)
+const crypPass1 = bcrypt.hashSync('testpass', 10)
+const crypPass2 = bcrypt.hashSync('adminpass', 10)
 
 
 exports.seed = function(knex) {
