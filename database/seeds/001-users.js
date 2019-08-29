@@ -1,5 +1,6 @@
 const bcrypt = require('bcryptjs')
-const crypPass = bcrypt.hashSync('password', 20)
+const crypPass1 = bcrypt.hashSync('testpass', 20)
+const crypPass2 = bcrypt.hashSync('adminpass', 20)
 
 
 exports.seed = function(knex) {
@@ -8,8 +9,8 @@ exports.seed = function(knex) {
     .then(function () {
       // Inserts seed entries
       return knex('users').insert([
-        {id: 1, email: 'test@gmail.com', password: crypPass},
-        {id: 2, email: 'admin@gmail.com', password: crypPass},
+        {id: 1, email: 'test@gmail.com', password: crypPass1},
+        {id: 2, email: 'admin@gmail.com', password: crypPass2},
       ]);
     });
 };
